@@ -1,21 +1,9 @@
-aiden_2015.txt
-   1 marlin
-   1 shark
-dmitri_2015.txt
-   1 cod
-   1 flying fish
-   2 marlin
-   3 shark
-   1 tuna
-   1 turtle
-matt_2014.txt
-   2 turtle
-matt_2015.txt
-   2 turtle
-seen.txt
-   1    1 cod
-   1    1 flying fish
-   1    1 tuna
-   1    1 turtle
-   1    2 marlin
-   1    3 shark
+# 
+# the number of distinct occurences of each species
+# in that file. Results are displayed in alphabetical order
+# by species name
+for filename in data/*.txt
+do
+   echo $filename
+   grep -v Species $filename | cut -d , -f 2 | sort | uniq -c | sort -n -r
+done
